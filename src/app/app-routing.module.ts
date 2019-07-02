@@ -4,6 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'cadastro-livros/:id', loadChildren: './cadastro-livros/cadastro-livros.module#CadastroLivrosPageModule' },
 ];
 
 @NgModule({

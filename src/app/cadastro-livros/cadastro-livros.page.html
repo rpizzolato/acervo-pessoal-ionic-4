@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="isCad">
+      Cadastro de Livros
+    </ion-title>
+    <ion-title *ngIf="!isCad">
+        Atualizar Livro
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-item>
+  <ion-label position="floating" autofocus="true">Nome do livro <ion-text color="danger">*</ion-text></ion-label>
+  <ion-input required [(ngModel)]="nomeLivro" type="text"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">ISBN <ion-text color="danger">*</ion-text></ion-label>
+  <ion-input required [(ngModel)]="isbn" type="number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Foto da Capa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-card [hidden]="!foto">
+          
+          <ion-img [src]="foto"></ion-img>
+        
+        </ion-card>
+      <ion-button (click)="adicionarFotoCapa()">
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Adicionar capa
+        </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Total de Páginas <ion-text color="danger">*</ion-text></ion-label>
+  <ion-input required [(ngModel)]="paginasTotal" type="number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Páginas Lidas <ion-text color="danger">*</ion-text></ion-label>
+  <ion-input required [(ngModel)]="paginasLidas" type="number"></ion-input>
+</ion-item>
+  
+</ion-content>
+
+<footer>
+<ion-button expand="block" *ngIf="isCad" (click)="cadastrarLivro()">
+    <ion-icon slot="start" name="add-circle"></ion-icon>
+  Cadastrar Livro
+</ion-button>
+
+<ion-button expand="block" *ngIf="!isCad" (click)="atualizarLivro()">
+    <ion-icon slot="start" name="refresh-circle"></ion-icon>
+    Atualizar Livro
+  </ion-button>
+
+<ion-button expand="block" color="danger" *ngIf="isCad" (click)="cancelaCadastro()">
+  <ion-icon slot="start" name="close-circle"></ion-icon>
+  Cancelar
+</ion-button>
+<ion-button expand="block" color="danger" *ngIf="!isCad" (click)="excluiLivro(isbn)">
+    <ion-icon slot="start" name="trash"></ion-icon>
+    Excluir Livro
+  </ion-button>
+</footer>

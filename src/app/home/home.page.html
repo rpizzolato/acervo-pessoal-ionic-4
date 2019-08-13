@@ -30,7 +30,7 @@
             </ion-thumbnail>
         <ion-label >
           <strong text-uppercase>{{ livro.nomeLivro }}</strong>
-          <p>Você leu <strong>{{ livro.paginasLidas * 100 / livro.paginasTotal | number:0 }}</strong>% do livro!</p>
+          <p>Você leu <strong>{{ livro.paginasLidas * 100 / livro.paginasTotal | number:'1.0-0' }}</strong>% do livro!</p>
         </ion-label>
        
       </ion-item>

@@ -28,13 +28,14 @@
     "cordova-android": "^8.0.0",
     "cordova-plugin-camera": "^4.0.3",
     "core-js": "^2.5.4",
+    "ionic-4-version": "^1.0.1",
+    "lodash": ">=4.17.13",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.29",
-    "lodash": ">=4.17.13"
+    "zone.js": "~0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "~0.13.8",
+    "@angular-devkit/architect": "^0.1201.2",
     "@angular-devkit/build-angular": "~0.13.8",
     "@angular-devkit/core": "~7.3.8",
     "@angular-devkit/schematics": "~7.3.8",
